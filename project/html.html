@@ -1,0 +1,31 @@
+<!Doctype HTML>
+<html>
+<head>
+  <title>Mockup Page</title>
+</head>
+
+<body>
+  <div id="name-list">
+    <label for="nameInput">Name: </label>
+    <input v-model= "newName" type= "text" id= "nameInput" @keyup.enter="nameList.push(newName)">
+    <button type= "button" @click= "nameList.push(newName)" v-model= "newName">AddName</button>
+  </div>
+
+  <ul>
+    <li v-for="name in nameList"></li>{{name}}</li>
+  </ul>
+
+  <script src="https://unpkg.com/vue@3.4.19/dist/vue.global.js"></script>
+
+  <script>
+    var namesss = new Vue({
+    el: '#name-list',
+    data: {
+      newName: '',
+      nameList:  []
+    }
+    });
+    </script>
+</body>
+
+</html>
